@@ -1,0 +1,16 @@
+{
+  "title": "Part 21 challenge: tape, then a wall",
+  "about": "A parking box made of tape, and a wall behind it. Your robot needs both sensors.",
+  "size": [220, 360],
+  "start": {"x": 110, "y": 40, "heading": 90},
+  "requires": ["ultrasonic", "line"],
+  "walls": [
+    {"x": 50, "y": 330, "w": 120, "h": 10}
+  ],
+  "tape": [
+    {"points": [[80, 220], [140, 220], [140, 280], [80, 280]], "closed": true, "width": 2.5}
+  ],
+  "zones": [
+    {"x": 80, "y": 220, "w": 60, "h": 60, "label": "P"}
+  ]
+}

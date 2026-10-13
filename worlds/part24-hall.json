@@ -1,0 +1,7 @@
+{
+  "title": "Part 24 challenge: the long hall",
+  "about": "A long empty hall. Drive as far as you like: a safe robot stops before the end wall.",
+  "size": [120, 300],
+  "start": {"x": 60, "y": 40, "heading": 90},
+  "requires": ["ultrasonic"]
+}

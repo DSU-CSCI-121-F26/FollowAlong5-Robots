@@ -1,0 +1,14 @@
+{
+  "title": "Part 23 challenge: the long way round",
+  "about": "Four legs: right, left, left, then a dead end. Scan at every stop to find the open way.",
+  "size": [300, 300],
+  "start": {"x": 35, "y": 30, "heading": 90},
+  "requires": ["scanner"],
+  "walls": [
+    {"x": 70, "y": 0, "w": 230, "h": 80},
+    {"x": 0, "y": 150, "w": 160, "h": 80}
+  ],
+  "zones": [
+    {"x": 0, "y": 230, "w": 70, "h": 70, "label": "Goal"}
+  ]
+}
