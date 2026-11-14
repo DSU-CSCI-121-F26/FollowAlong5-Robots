@@ -11,5 +11,29 @@ import mbot.*;
 
 @MBotLab(world = "line-track")
 public class Stretch {
+    public static void main(String[] args) {
+        /*
+        6: straight
+        12: turn left
+        3: turn right
+        0: lost it
+         */
+        int[] readings = {6, 12, 3, 0};
+        for (int s : readings) {
+            if (s == 4 || s == 8 || s == 12) {
+                System.out.println(s + ": turn left");
+            } else if (s == 1 || s == 2 || s == 3) {
+                System.out.println(s + ": turn right");
+            } else if (s == 0) {
+                System.out.println(s + ": lost it");
+            } else {
+                System.out.println(s + ": straight");
+            }
+
+        }
+        Lapper lapper = new Lapper(new Rover("Loop"));
+        lapper.laps(2);
+
+    }
 
 }

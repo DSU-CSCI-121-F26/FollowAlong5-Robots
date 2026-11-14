@@ -11,5 +11,15 @@ import mbot.*;
 
 @MBotLab(world = "open-room")
 public class Stretch {
+    public static void main(String[] args) {
+       /*
+       true
+        */
+        MBot2 a = new FlashyBot();
+        Chassis c = a;
+        a.straight(10);
+        c.turnLeft(90);
+        System.out.println(a == c);
+    }
 
 }

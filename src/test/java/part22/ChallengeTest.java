@@ -54,11 +54,11 @@ class ChallengeTest {
     // ---- reachGoal ----
 
     @Test
-    void reachGoalEndsInTheGoal() {
+     void reachGoalEndsInTheGoal() {
         Testing.start("worlds/part22-maze.json");
         Challenge robot = new Challenge();
         robot.reachGoal();
-        assertTrue(Testing.insideZone("Goal"), "the robot should end in the Goal, but it is at x = "
+        assertTrue(Testing.insideZone( "Goal"), "the robot should end in the Goal, but it is at x = "
                 + Testing.x() + ", y = " + Testing.y());
         assertEquals(0, Testing.bumps(), "no bumping into boxes or walls");
     }

@@ -10,7 +10,18 @@ import mbot.*;
 //
 // SECTION B — COMMENTS: put a // comment ABOVE every line of code, in YOUR OWN WORDS.
 
+// this initially starts the rover simulation
 @MBotLab(world = "wall-ahead")
 public class FollowAlong {
+    public static void main(String[] args) {
 
+        // this generates the Rover object named Scout
+        Rover scout = new Rover("Scout");
+        // prints out when Scout is ready
+        System.out.println(scout + " is ready");
+        // Scout Drives until blocked by something nearby
+        scout.driveUntilBlocked();
+        // prints out when Scout is stopped
+        System.out.println(scout + " stopped. Something is less than 20 cm ahead.");
+    }
 }

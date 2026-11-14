@@ -14,5 +14,35 @@ import mbot.*;
 //    saying in YOUR OWN WORDS what that line does.
 
 public class CarefulBot extends MBot2 {
+    private int refused = 0;
 
+    public CarefulBot() {
+
+        super();// Call the parent MBot2 constructor
+    }
+
+    @Override
+    public void straight(double cm) {
+        if (readUltrasonic() > cm + 20) {
+            super.straight(cm);// Call the parent straight method to move forward
+        } else {
+            refused++;
+            turnLedOn(1, 255, 0, 0);
+            System.out.println("CarefulBot: not driving " + cm + " cm, too close");
+
+        }
+    }
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 5; i++) {// Loop 5 times to execute movement attempts
+            straight(40);// Try to move straight by 40 centimeters safely
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "CarefulBot (refused " +  refused + " moves)";
+    }
 }
+

@@ -12,5 +12,22 @@ import mbot.*;
 
 @MBotLab(world = "junctions")
 public class Explore {
-
+    public static void main(String[] args) {
+        // Initializes a new Scout robot named Pathfinder
+        Scout scout = new Scout("Pathfinder");
+        // Repeat the movement loop for 3 legs
+        for (int leg = 1; leg <= 3; leg++) {
+            // Move forward until blocked and save the step count
+            int moves = scout.driveUntilBlocked();
+            // Display the current leg number and moves taken
+            System.out.println("Leg " + leg + ": " + moves + " moves");
+            // Check if it is not yet the final leg
+            if (leg < 3) {
+                // Turn toward the open path for the next leg
+                scout.turnTowardOpenSide();
+            }
+        }
+        // Print a message confirming the goal has been reached
+        System.out.println(scout + " reached the goal");
+    }
 }

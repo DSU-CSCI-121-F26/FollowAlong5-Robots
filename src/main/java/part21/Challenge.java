@@ -19,19 +19,29 @@ public class Challenge {
 
     // Build the robot. Make the chassis FIRST. Then plug an Ultrasonic AND a LineSensor into it.
     public Challenge() {
-        // YOUR CODE
+      base = new Chassis();
+      eyes = new Ultrasonic(base);
+      floor = new LineSensor(base);// YOUR CODE
     }
 
     // Drive forward 5 cm at a time, until the ultrasonic reads LESS than 15 cm.
     // Give back how many 5 cm moves it made.
     //   (A robot that is already closer than 15 cm makes 0 moves.)
     public int stepsToWall() {
-        return 0;   // YOUR CODE
+        int steps = 0;
+        while (eyes.distance() >= 15) {
+            base.straight(5);
+            steps++;
+        }
+        return steps;   // YOUR CODE
     }
 
     // Drive forward 2 cm at a time until the line sensor sees tape.
     // Then drive 30 cm more, so the robot ends inside the taped box.
     public void park() {
-        // YOUR CODE
+        while (!floor.seesTape()) {
+            base.straight(2);
+        }
+        base.straight(30);
     }
 }
