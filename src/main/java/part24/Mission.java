@@ -14,11 +14,11 @@ public class Mission {
     // accepts any MBot2 robot and runs its own version of run
     public static void mission(MBot2 bot) {
         // prints that the mission is starting
-        System.out.println("Mission start");
+        System.out.println("Mission start: " + bot);
         // runs the version belonging to the actual robot passed in
         bot.run();
         // prints this once the robot's routine finishes
-        System.out.println("Mission done");
+        System.out.println("Mission done: " + bot);
     }
 
     public static void main(String[] args) {

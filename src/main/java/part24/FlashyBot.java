@@ -10,6 +10,9 @@ import mbot.*;
 // SECTION B — COMMENTS: put a // comment ABOVE every line of code, in YOUR OWN WORDS.
 
 public class FlashyBot extends MBot2 {
+
+    private int turns;
+
     // sets up this robot using the parent constructor
     public FlashyBot() {
         // builds the inherited robot parts first
@@ -28,6 +31,7 @@ public class FlashyBot extends MBot2 {
         super.turnLeft(degrees);
         // switches off led 1 after the turn finishes
         turnLedOff(1);
+        turns++;
     }
 
     // replaces the inherited right turn with a light-up version
@@ -42,6 +46,7 @@ public class FlashyBot extends MBot2 {
         super.turnRight(degrees);
         // switches off led 1 after the turn finishes
         turnLedOff(1);
+        turns++;
     }
 
     // replaces the inherited run method with a square-driving routine
@@ -56,4 +61,10 @@ public class FlashyBot extends MBot2 {
             turnLeft(90);
         }
     }
+
+    @Override
+    public String toString() {
+        return "FlashyBot (" + turns + " turns)";
+    }
+
 }
