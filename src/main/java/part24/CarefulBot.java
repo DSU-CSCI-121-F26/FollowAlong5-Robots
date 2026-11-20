@@ -14,26 +14,37 @@ import mbot.*;
 //    saying in YOUR OWN WORDS what that line does.
 
 public class CarefulBot extends MBot2 {
-
+    // sets up the careful robot using the parent constructor
     public CarefulBot() {
+        // runs the parent constructor to build the robot
         super();
     }
 
+    // replaces the inherited straight method with a safety check
     @Override
+    // checks for enough space before moving the requested distance
     public void straight(double cm) {
+        // only moves if more than 20 cm will still be clear ahead
         if (readUltrasonic() > cm + 20) {
+            // uses the parent's movement code to make the actual move
             super.straight(cm);
+            // handles the move when there isn't enough room
         } else {
+            // turns led 1 red to show the robot isn't gonna move
             turnLedOn(1, 255, 0, 0);
+            // prints the requested distance and why the robot won't drive
             System.out.println("CarefulBot: not driving " + cm + " cm, too close");
         }
     }
 
+    // replaces the inherited run method with this robot's routine
     @Override
+    // tries five forward moves using the safety check in straight
     public void run() {
+        // repeats the movement attempt five times
         for (int i = 0; i < 5; i++) {
+            // asks this robot's straight method to move forward 40 cm
             straight(40);
         }
     }
-
 }
