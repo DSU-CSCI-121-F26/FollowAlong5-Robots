@@ -11,5 +11,26 @@ import mbot.*;
 
 @MBotLab(world = "open-room")
 public class Stretch {
+    public static void main(String[] args) {
+
+        /*
+        it's gonna print Flash!, Turning left 90.0, and true
+        */
+
+        MBot2 a = new FlashyBot();
+        Chassis c = a;
+        a.straight(10);
+        c.turnLeft(90);
+        System.out.println(a == c);
+
+        System.out.println(a);
+
+        /*
+        with pick 3, the first line prints "Mission start: " followed by the
+        regular robot's name. it's using MBot2's toString because the object
+        is a regular MBot2, so it doesn't show refused moves or counted turns.
+        */
+
+    }
 
 }
