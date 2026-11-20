@@ -12,5 +12,11 @@ import mbot.*;
 
 @MBotLab(world = "obstacles")
 public class ObstacleRun {
+    public static void main(String[] args) {
+
+        Rover rover = new Rover("Dash");
+        rover.reachGoal();
+        System.out.println(rover + " reached the goal");
+    }
 
 }
