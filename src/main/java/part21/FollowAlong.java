@@ -12,5 +12,11 @@ import mbot.*;
 
 @MBotLab(world = "wall-ahead")
 public class FollowAlong {
+    public static void main(String[] args) {
+        Rover scout = new Rover("Scout");
+        System.out.println(scout + " is ready");
+        scout.driveUntilBlocked();
+        System.out.println(scout + " stopped. Something is less than 20 cm ahead.");
+    }
 
 }
