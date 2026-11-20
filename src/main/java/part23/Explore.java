@@ -12,5 +12,17 @@ import mbot.*;
 
 @MBotLab(world = "junctions")
 public class Explore {
+    public static void main(String[] args) {
+
+        Scout scout = new Scout("Pathfinder");
+        for (int leg = 1; leg <= 3; leg++) {
+            int moves = scout.driveUntilBlocked();
+            System.out.println("Leg " + leg + ": " + moves + " moves");
+            if (leg < 3) {
+                scout.turnTowardOpenSide();
+            }
+        }
+        System.out.println(scout + " reached the goal");
+    }
 
 }
