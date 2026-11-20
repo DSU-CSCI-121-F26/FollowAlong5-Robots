@@ -13,10 +13,11 @@ import mbot.*;
 @MBotLab(world = "obstacles")
 public class ObstacleRun {
     public static void main(String[] args) {
-
+        // makes a rover named Dash that's gonna handle the course
         Rover rover = new Rover("Dash");
+        // sends Dash around the obstacle and toward the goal
         rover.reachGoal();
+        // prints the finish message once the route is done
         System.out.println(rover + " reached the goal");
     }
-
 }
