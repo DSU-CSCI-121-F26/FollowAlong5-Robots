@@ -22,6 +22,7 @@ public class Rover {
     private Chassis base;
     // holds the sensor that's gonna check the distance ahead
     private Ultrasonic eyes;
+    private LineSensor floor;
     // builds a rover with its own name, chassis, and sensor
     public Rover(String name) {
         // saves the name passed in for this specific rover
@@ -30,6 +31,7 @@ public class Rover {
         this.base = new Chassis();
         // connects the distance sensor to this rover's chassis
         this.eyes = new Ultrasonic(base);
+        this.floor = new LineSensor(base);
 
     }
 
@@ -49,6 +51,18 @@ public class Rover {
             // moves forward 5 cm before checking the distance again
             base.straight(5);
         }
+    }
+
+    public void driveToTape() {
+        while (!floor.seesTape()) {
+            base.straight(2);
+        }
+    }
+
+    public void forward(double cm) {
+
+        // hands the movement over to the chassis
+        base.straight(cm);
     }
 
 }
