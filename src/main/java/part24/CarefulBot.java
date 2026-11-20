@@ -15,4 +15,25 @@ import mbot.*;
 
 public class CarefulBot extends MBot2 {
 
+    public CarefulBot() {
+        super();
+    }
+
+    @Override
+    public void straight(double cm) {
+        if (readUltrasonic() > cm + 20) {
+            super.straight(cm);
+        } else {
+            turnLedOn(1, 255, 0, 0);
+            System.out.println("CarefulBot: not driving " + cm + " cm, too close");
+        }
+    }
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            straight(40);
+        }
+    }
+
 }
